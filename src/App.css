@@ -1,6 +1,42 @@
+html{
+  background-color: bisque;
+}
 .App {
   text-align: center;
-  background-color: gray;
+}
+h1{
+  font-family: 'Dosis', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+button{
+  font-size: 1.5rem;
+  width: 200px;
+  height: 50px;
+  margin: 20px;
+}
+input{
+  width: 400px;
+  font-size: 1.2rem;
+}
+p,input,button{
+  font-family: 'Dosis', sans-serif;
+  font-weight: 600;
+}
+.thumbnail{
+  border-radius: 50%;
+}
+.recipe-thumbnail{
+  background-color: white;
+  width: 250px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 25px;
 }
 
+.recipes{
+  display: flex;
+  flex-wrap: wrap;
+
+}
 

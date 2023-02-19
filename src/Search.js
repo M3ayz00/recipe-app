@@ -8,16 +8,18 @@ export default function Search() {
   const [recipes,setRecipes] = useState([])
 
 
-  const handleclick = async () => {
-    try {
-      const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${meal}&app_id=4e82b945&app_key=3bbe44949886764a36f0e18fcf1fc6dc`);
-      const data = await response.json();
-      setData(data);
-      setRecipes(data.hits);
-      console.log(dataa);
-      console.log(recipes);
-    } catch (error) {
-      console.error(error);
+  const handleclick = async (event) => {
+    if(event.key==='Enter'){
+      try {
+        const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${meal}&app_id=4e82b945&app_key=3bbe44949886764a36f0e18fcf1fc6dc`);
+        const data = await response.json();
+        setData(data);
+        setRecipes(data.hits);
+        console.log(dataa);
+        console.log(recipes);
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
   
@@ -28,9 +30,9 @@ export default function Search() {
 
       return(
         <>
-      <div>
+      <div className='recipe-thumbnail'>
         <div>
-          <img src={arr.recipe.images.THUMBNAIL.url} alt='' />
+          <img className='thumbnail' src={arr.recipe.images.THUMBNAIL.url} alt='' />
           <p>{arr.recipe.label}</p>
         </div>
         <div>
@@ -45,7 +47,7 @@ export default function Search() {
   
 
   return (
-    <div>
+    <div className='recipes-list'>
         <h1>Get ready to be amazed !</h1>
         <div>
             <input 
@@ -55,10 +57,8 @@ export default function Search() {
             type="text"
             placeholder='Find the best recipes from across the web'
             />
-            <button
-            >Find</button>
         </div>
-        <div>
+        <div className='recipes'>
           {recipes.map((recipe)=>
             renderRecipe(recipe)
            )}
