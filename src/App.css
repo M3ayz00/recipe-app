@@ -14,10 +14,36 @@ button{
   width: 200px;
   height: 50px;
   margin: 20px;
+  cursor: pointer;
+  background-color: black;
+  color: bisque;
+  border-radius: 25px;
+}
+.button1:hover{
+  background-color: bisque;
+  color: black;
+  width: 210px;
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.button2:hover{
+  background-color: bisque;
+  color: black;
+  width: 210px;
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 input{
   width: 400px;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  border-radius: 25px;
+  padding: .4em;
 }
 p,input,button{
   font-family: 'Dosis', sans-serif;

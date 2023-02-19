@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 
 export default function Search() {
-
-
-  const [dataa,setData] = useState({})
   const [meal,setMeal] = useState('')
   const [recipes,setRecipes] = useState([])
 
@@ -13,9 +10,7 @@ export default function Search() {
       try {
         const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${meal}&app_id=4e82b945&app_key=3bbe44949886764a36f0e18fcf1fc6dc`);
         const data = await response.json();
-        setData(data);
         setRecipes(data.hits);
-        console.log(dataa);
         console.log(recipes);
       } catch (error) {
         console.error(error);

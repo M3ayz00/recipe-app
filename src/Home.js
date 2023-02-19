@@ -8,12 +8,12 @@ export default function Home() {
     <div>
       <h1 className='homePhrase'>Oh, no! You seem to have wandered into a food desert! You must be hungry...</h1>
             <Link to="/Search">
-              <button>
+              <button className='button1'>
                   Search for a recipe
               </button>
             </Link>
             <Link to="/Favorite">
-              <button>
+              <button className='button2'>
                   Favorite recipes
               </button>
               </Link>
