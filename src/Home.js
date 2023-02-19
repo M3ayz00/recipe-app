@@ -1,6 +1,7 @@
 import React from 'react'
 import Search from './Search';
 import Favorite from './Favorite';
+import Recipe from './Recipe';
 import {Routes, Link, Route  } from 'react-router-dom';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Routes>
         <Route path="/Search" element={<Search />} />
         <Route path="/Favorite" element={<Favorite />} />
+        <Route path='/recipe/:uri' element={<Recipe/>} />
       </Routes>
     </div>
   )

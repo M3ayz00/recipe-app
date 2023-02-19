@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Search() {
   const [meal,setMeal] = useState('')
@@ -22,21 +23,25 @@ export default function Search() {
     function formatNumber(number) {
       return Number(number.toFixed(2));
     }
-
-      return(
-        <>
-      <div className='recipe-thumbnail'>
-        <div>
-          <img className='thumbnail' src={arr.recipe.images.THUMBNAIL.url} alt='' />
-          <p>{arr.recipe.label}</p>
+  
+    const recipeId = encodeURIComponent(arr.recipe.uri.split('#')[1]);
+  
+    return (
+      <Link to={`/recipe/${recipeId}`}>
+        <div className='recipe-thumbnail'>
+          <div>
+            <img className='thumbnail' src={arr.recipe.images.THUMBNAIL.url} alt='' />
+            <p>{arr.recipe.label}</p>
+          </div>
+          <div>
+            <p>{formatNumber(arr.recipe.calories)} CALORIES | {arr.recipe.ingredients.length} INGREDIENTS</p>
+          </div>
         </div>
-        <div>
-          <p>{formatNumber(arr.recipe.calories)} CALORIES | {arr.recipe.ingredients.length} INGREDIENTS</p>
-        </div>
-      </div>
-      </>
+      </Link>
     );
   }
+  
+  
   
 
   
