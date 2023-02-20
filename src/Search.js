@@ -19,7 +19,8 @@ export default function Search() {
     }
   }
   
-  const renderRecipe = (arr) =>{
+  const renderRecipe = (arr,index) =>{
+    
     function formatNumber(number) {
       return Number(number.toFixed(2));
     }
@@ -27,7 +28,7 @@ export default function Search() {
     const recipeId = encodeURIComponent(arr.recipe.uri.split('#')[1]);
   
     return (
-      <Link to={`/recipe/${recipeId}`}>
+      <Link to={`/recipe/${recipeId}`} key={toString(index)}>
         <div className='recipe-thumbnail'>
           <div>
             <img className='thumbnail' src={arr.recipe.images.THUMBNAIL.url} alt='' />
@@ -59,8 +60,8 @@ export default function Search() {
             />
         </div>
         <div className='recipes'>
-          {recipes.map((recipe)=>
-            renderRecipe(recipe)
+          {recipes?.map((recipe,index)=>
+            renderRecipe(recipe,index)
            )}
         </div>
       
