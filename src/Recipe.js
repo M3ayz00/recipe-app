@@ -31,39 +31,39 @@ export default function Recipe() {
             
               <div className='info'>
                 
-                  <span>{nutrient.label} </span>
-                  <span >{" "}{formatNumber((nutrient.total)/(recipe.yield))}{" "}{nutrient.unit}</span>
-                  <span >{" "}{formatNumber((nutrient.daily)/(recipe.yield))} %</span>
+                  <span className='nutrient'>{nutrient.label} </span>
+                  <span className='unit'>{" "}{formatNumber((nutrient.total)/(recipe.yield))}{" "}{nutrient.unit}</span>
+                  <span className='unit'>{" "}{formatNumber((nutrient.daily)/(recipe.yield))} %</span>
                 
              
               
                 <ul>
                   <div className='info sub-info'>
                     <li >
-                      <span>{nutrient?.sub[0].label} </span>
-                      <span >{" "}{formatNumber((nutrient.sub[0].total)/(recipe.yield))} %</span>
-                      <span >{" "}{formatNumber((nutrient.sub[0].daily)/(recipe.yield))}{" "}{nutrient.sub[0].unit}</span>
+                      <span className='nutrient'>{nutrient?.sub[0].label} </span>
+                      <span className='unit'>{" "}{formatNumber((nutrient.sub[0].total)/(recipe.yield))} %</span>
+                      <span className='unit'>{" "}{formatNumber((nutrient.sub[0].daily)/(recipe.yield))}{" "}{nutrient.sub[0].unit}</span>
                     </li>
                   </div>
                   <div className='info sub-info'>
                     <li >
-                      <span>{nutrient.sub[1].label} </span>
-                    <span >{" "}{formatNumber((nutrient.sub[1].total)/(recipe.yield))} %</span>
-                    <span >{" "}{formatNumber((nutrient.sub[1].daily)/(recipe.yield))}{" "}{nutrient.sub[1].unit}</span>
+                      <span className='nutrient'>{nutrient.sub[1].label} </span>
+                      <span className='unit'>{" "}{formatNumber((nutrient.sub[1].total)/(recipe.yield))} %</span>
+                      <span className='unit'>{" "}{formatNumber((nutrient.sub[1].daily)/(recipe.yield))}{" "}{nutrient.sub[1].unit}</span>
                     </li>
                   </div>
                   <div className='info sub-info'>
                     <li >
-                      <span>{nutrient.sub[2].label} </span>
-                    <span >{" "}{formatNumber((nutrient.sub[2].total)/(recipe.yield))} %</span>
-                    <span >{" "}{formatNumber((nutrient.sub[2].daily)/(recipe.yield))}{" "}{nutrient.sub[2].unit}</span>
+                      <span className='nutrient'>{nutrient.sub[2].label} </span>
+                      <span className='unit'>{" "}{formatNumber((nutrient.sub[2].total)/(recipe.yield))} %</span>
+                      <span className='unit'>{" "}{formatNumber((nutrient.sub[2].daily)/(recipe.yield))}{" "}{nutrient.sub[2].unit}</span>
                     </li>
                   </div>
                   <div className='info sub-info'>
                     <li >
-                      <span>{nutrient.sub[3].label}</span> 
-                    <span >{" "}{formatNumber((nutrient.sub[3].total)/(recipe.yield))} %</span>
-                    <span >{" "}{formatNumber((nutrient.sub[3].daily)/(recipe.yield))}{" "}{nutrient.sub[3].unit}</span>
+                      <span className='nutrient'>{nutrient.sub[3].label}</span> 
+                      <span className='unit'>{" "}{formatNumber((nutrient.sub[3].total)/(recipe.yield))} %</span>
+                      <span className='unit'>{" "}{formatNumber((nutrient.sub[3].daily)/(recipe.yield))}{" "}{nutrient.sub[3].unit}</span>
                     </li>
                   </div>
                 </ul>
@@ -73,9 +73,9 @@ export default function Recipe() {
 
           return(
             <div className='info'>
-              <span >{nutrient?.label}</span>
-              <span >{" "}{formatNumber((nutrient.total)/(recipe.yield))}{" "}{nutrient.unit}</span>
-              <span >{" "}{formatNumber((nutrient.daily)/(recipe.yield))} %</span>
+              <span className='nutrient'>{nutrient?.label}</span>
+              <span className='unit'>{" "}{formatNumber((nutrient.total)/(recipe.yield))}{" "}{nutrient.unit}</span>
+              <span className='unit'>{" "}{formatNumber((nutrient.daily)/(recipe.yield))} %</span>
             </div>
         )
       }
@@ -104,15 +104,15 @@ export default function Recipe() {
         <div className='nutrients'>
           <h3>Nutrition :</h3><hr></hr>
           <div>
-            <span>{formatNumber((recipe?.calories)/(recipe?.yield))}</span>
+            <span>{formatNumber((recipe?.calories)/(recipe?.yield))}{" "}</span>
             <span>Calories / Serving</span>
           </div>
           <div>
-            <span>{recipe?.yield}</span>
+            <span>{recipe?.yield}{" "}</span>
             <span>Servings</span><hr></hr>
           </div>
           <div className='health-labels'>
-           <span> {recipe?.healthLabels?.join(', ')}</span> 
+           <span> {recipe?.healthLabels?.join(', ')}</span> <hr></hr>
           </div>
           <div className='recipe-digest'>
             {renderNutrients(recipe?.digest)}
