@@ -21,10 +21,17 @@ ul,li{
   position: absolute;
   right: 0%;
 }
+.header-image img{
+  border-radius: 10px;
+}
 .header-recipe{
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 600px;
   display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  align-items: center;
+  position: relative;
+  left: 25%;
 }
 .servings{
   display: flex;
