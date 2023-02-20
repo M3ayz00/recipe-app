@@ -16,9 +16,25 @@ ul{
 ul,li{
   list-style: none;
 }
+.units-div{
+  display: inline;
+  position: absolute;
+  right: 0%;
+}
+.header-recipe{
+  display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.servings{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 .info{
   text-align: start;
   margin: 20px;
+  position: relative;
 }
 .nutrients, .ingredients{
   width: 40%;
@@ -27,7 +43,7 @@ ul,li{
   padding: 10px;
 }
 .nutrient{
-  margin-right: 100px;
+  margin-right: 80px;
 }
 .info-list{
   display: flex;
@@ -42,7 +58,7 @@ button{
   cursor: pointer;
   background-color: black;
   color: bisque;
-  border-radius: 25px;
+  border-radius: 15px;
 }
 .container{
   display: flex;
@@ -57,6 +73,7 @@ button{
   margin-bottom: 10px;
   margin-left: 15px;
   margin-right: 15px;
+  border-radius: 15px;
 }
 .button2:hover{
   background-color: bisque;
@@ -77,6 +94,14 @@ input{
 p,input,button,span,li,h3{
   font-family: 'Dosis', sans-serif;
   font-weight: 600;
+}
+h3{
+  font-size: 1.5em;
+  color: rgb(104, 104, 104);
+}
+.health-labels{
+  font-size: 1.5em;
+  
 }
 .thumbnail{
   border-radius: 50%;
