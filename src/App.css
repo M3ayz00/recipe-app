@@ -18,9 +18,16 @@ ul,li{
 }
 .info{
   text-align: start;
+  margin: 20px;
 }
 .nutrients, .ingredients{
   width: 40%;
+}
+.unit{
+  padding: 10px;
+}
+.nutrient{
+  margin-right: 100px;
 }
 .info-list{
   display: flex;
